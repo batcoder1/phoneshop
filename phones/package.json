@@ -1,0 +1,26 @@
+{
+  "name": "phones",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+   
+    "start": "nodemon server.js",
+    "test": "mocha ./tests/*.spec.js --exit"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parse": "^0.1.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.19",
+    "nodemon": "^1.18.10"
+    
+  },
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "mocha": "^6.0.2"
+  }
+}
