@@ -90,6 +90,7 @@ exports.check = async (req, res) => {
 
         await completeOrder(order)
         return res.status(200).send({
+            order: order,
             message: "Order succesfull, status: complete"
 
         });
