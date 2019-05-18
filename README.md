@@ -5,8 +5,9 @@
 
 # PhoneShop Microservices
 
-Nodejs application with microservices ARQ. Using Redis to allow the comunication between microservices. 
-When a customer make a order, the stock is updated and the customer balance is updated too, substract phone price from customer balance. If customer hasn't enought money, return a error
+Nodejs application with microservices ARQ. 
+Using http request between microservices. 
+ 
 
 
 ## start backend
