@@ -1,0 +1,62 @@
+version: '3'
+
+services:
+      
+  orders-service:
+    container_name: orders-services
+    restart: always
+   
+    build:
+      # Current folder is root folder
+      context: ./orders
+      # Path of dockerfile
+      dockerfile: ./docker/Dockerfile
+      args:
+        - NODE_ENV=local
+    # Evolupay api binging ports
+    volumes:
+      - .orders:/opt/orders    
+    ports:
+      - "7777:7777"
+    # Network settings  
+    networks:
+      app_net:
+        ipv4_address: "10.5.0.3"
+    
+     # Environment variable file
+    env_file: ./orders/.env
+  
+     
+  phones-service:
+    container_name: phones-services
+    restart: always
+    
+    build:
+      # Current folder is root folder
+      context: ./phones
+      # Path of dockerfile
+      dockerfile: ./docker/Dockerfile
+      args:
+        - NODE_ENV=local
+    # Evolupay api binging ports
+    volumes:
+      - ./phones:/opt/app 
+    ports:
+      - "5555:5555"
+      
+    # Network settings  
+    networks:
+      app_net:
+        ipv4_address: "10.5.0.4"
+    # Environment variable file
+    env_file: ./phones/.env
+   
+  
+networks:
+  app_net:
+    driver: bridge
+    ipam:
+      driver: default
+      # Subnnet CIDR address
+      config:
+        - subnet: 10.5.0.0/16

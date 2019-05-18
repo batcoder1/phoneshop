@@ -25,12 +25,12 @@ Microservice to manage phones
 
 ### Get all phones - pagination
 ```
-GET/ http://localhost/phones?page=1
+GET/ http://localhost:5555/phones?page=1
 ```
 
 ### Create a new phone
 ```
-POST/ http://localhost/phones/create
+POST/ http://localhost:5555/phones/create
 ```
 
 ## Orders
@@ -39,19 +39,19 @@ Microservice to manage orders
 
 ### Get all orders
 ```
-GET/ http://localhost/orders
+GET/ http://localhost:7777/orders
 ```
  
 ### Create a new order
 To create order with autocheck
 ```
-POST/ http://localhost/orders/create
+POST/ http://localhost:7777/orders/create
 ```
 
 ### Check
 Check the orden and change it to completed status
 ```
-POST/ http://localhost/phones/check/:id
+POST/ http://localhost:7777/phones/check/:id
 ```
 
 # QUESTIONS
